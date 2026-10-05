@@ -190,16 +190,16 @@
     margin:44px 0 0;
   }
 
+  /* Só deslize, sem fade: conteúdo em opacity:0 impede o FCP e o Lighthouse não mede. */
   .anima{
-    opacity:0;
     transform:translateY(10px);
     animation:sobe .5s ease forwards;
   }
 
-  @keyframes sobe{to{opacity:1;transform:translateY(0);}}
+  @keyframes sobe{to{transform:translateY(0);}}
 
   @media (prefers-reduced-motion: reduce){
-    .anima{animation:none;opacity:1;transform:none;}
+    .anima{animation:none;transform:none;}
     .link{transition:none;}
     .link:hover{transform:none;}
   }
