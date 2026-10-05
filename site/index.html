@@ -18,6 +18,27 @@
 <meta property="og:image:alt" content="Eduardo Cota, advogado — imobiliário e patrimonial, OAB/MG 201.458">
 <meta name="twitter:card" content="summary_large_image">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Eduardo Cota",
+  "jobTitle": "Advogado",
+  "url": "https://eduardocota.adv.br/",
+  "image": "https://eduardocota.adv.br/icon-512.png",
+  "knowsAbout": ["Direito imobiliário", "Direito patrimonial"],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Inscrição na Ordem dos Advogados do Brasil",
+    "name": "OAB/MG 201.458"
+  },
+  "sameAs": [
+    "https://www.youtube.com/@eduardoflavianoo",
+    "https://www.instagram.com/edflaviano/"
+  ]
+}
+</script>
+
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -249,7 +270,7 @@
   <nav class="lista">
 
     <a class="link anima" style="animation-delay:.18s"
-       href="#" data-canal="whatsapp" data-url="https://wa.me/5531975997946?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20de%20links%20e%20gostaria%20de%20falar%20sobre%20uma%20quest%C3%A3o%20patrimonial">
+       href="https://wa.me/5531975997946?text=Ol%C3%A1%2C%20vim%20pela%20sua%20p%C3%A1gina%20de%20links%20e%20gostaria%20de%20falar%20sobre%20uma%20quest%C3%A3o%20patrimonial" data-canal="whatsapp">
       <svg class="icone" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
       <span class="texto">
         <span class="rotulo">Falar com um advogado</span>
@@ -261,7 +282,7 @@
     </a>
 
     <a class="link secundario anima" style="animation-delay:.24s"
-       href="#" rel="me" data-canal="youtube" data-url="https://www.youtube.com/@eduardoflavianoo">
+       href="https://www.youtube.com/@eduardoflavianoo" rel="me" data-canal="youtube">
       <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>
       <span class="texto">
         <span class="rotulo">Canal do YouTube</span>
@@ -270,7 +291,7 @@
     </a>
 
     <a class="link secundario anima" style="animation-delay:.30s"
-       href="#" rel="me" data-canal="instagram" data-url="https://www.instagram.com/edflaviano/">
+       href="https://www.instagram.com/edflaviano/" rel="me" data-canal="instagram">
       <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
       <span class="texto">
         <span class="rotulo">Instagram</span>
@@ -281,46 +302,12 @@
   </nav>
 
   <footer class="rodape anima" style="animation-delay:.36s">
-    &copy; <span id="ano"></span> Eduardo Cota · OAB/MG 201.458
+    &copy; <span id="ano">2026</span> Eduardo Cota · OAB/MG 201.458
   </footer>
 
 </main>
 
-<script>
-(function(){
-  document.getElementById('ano').textContent = new Date().getFullYear();
-
-  // Cole aqui a URL do webhook do n8n. Vazio = rastreio desligado.
-  var WEBHOOK = '';
-
-  var params = new URLSearchParams(location.search);
-
-  document.querySelectorAll('.link').forEach(function(botao){
-    var destino = botao.dataset.url;
-    botao.setAttribute('href', destino);
-
-    botao.addEventListener('click', function(){
-      if(!WEBHOOK) return;
-
-      var dados = JSON.stringify({
-        canal: botao.dataset.canal,
-        destino: destino,
-        utm_source: params.get('utm_source'),
-        utm_medium: params.get('utm_medium'),
-        utm_content: params.get('utm_content'),
-        referrer: document.referrer,
-        momento: new Date().toISOString()
-      });
-
-      if(navigator.sendBeacon){
-        navigator.sendBeacon(WEBHOOK, new Blob([dados], {type:'application/json'}));
-      }else{
-        fetch(WEBHOOK, {method:'POST', body:dados, headers:{'Content-Type':'application/json'}, keepalive:true});
-      }
-    });
-  });
-})();
-</script>
+<script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Página não encontrada | Eduardo Cota, advogado</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/archivo-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:100 900;
+    font-display:swap;
+    src:url('/fonts/archivo-latin-wght.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+  /* Mesma paleta e escala da index.html — MARCA.md */
+  :root{
+    --cedro:#1F3D34;
+    --cedro-profundo:#152A24;
+    --grafite:#191C1A;
+    --calcario:#F4F1EA;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+
+  html,body{margin:0;padding:0;}
+
+  body{
+    background:var(--calcario);
+    color:var(--grafite);
+    font-family:'Archivo', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:72px 24px calc(48px + env(safe-area-inset-bottom));
+    text-align:center;
+  }
+
+  .painel{width:100%;max-width:400px;}
+
+  .marca{
+    display:block;
+    width:100%;
+    max-width:300px;
+    height:auto;
+    margin:0 auto 72px;
+  }
+
+  h1{
+    font-size:clamp(1.6rem, 8.5vw, 2.1rem);
+    font-weight:700;
+    line-height:1.08;
+    letter-spacing:-.035em;
+    margin:0 0 14px;
+  }
+
+  p{
+    font-size:1rem;
+    line-height:1.5;
+    color:var(--cedro);
+    margin:0 0 34px;
+    text-wrap:balance;
+  }
+
+  a.voltar{
+    display:inline-block;
+    padding:18px 28px;
+    border-radius:16px;
+    background:var(--cedro);
+    color:var(--calcario);
+    font-weight:600;
+    text-decoration:none;
+    transition:background .18s ease;
+  }
+
+  a.voltar:hover,
+  a.voltar:focus-visible{background:var(--cedro-profundo);}
+
+  a.voltar:focus-visible{outline:2px solid var(--grafite);outline-offset:3px;}
+
+  @media (prefers-reduced-motion: reduce){
+    a.voltar{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<main class="painel">
+  <img class="marca" src="/logo.svg" width="1251" height="234" alt="Eduardo Cota, advogado">
+  <h1>Página não encontrada</h1>
+  <p>O endereço que você abriu não existe ou mudou de lugar.</p>
+  <a class="voltar" href="/">Voltar para o início</a>
+</main>
+
+</body>
+</html>

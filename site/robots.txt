@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eduardocota.adv.br/sitemap.xml
